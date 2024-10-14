@@ -1,9 +1,13 @@
-N = int(input("Введіть кількість N: "))
-if N>=2 and N<99:
-    for i in range(1, N+1):
-        print(i,i)
-        num1 = i * 100 + 10
-        num2 = i * 100 + 30
-        print(f"{num1} 0 {num2} 0")
+N = int(input("Введіть значення N: "))
+if 2 <= N < 99:
+    for i in range(1, N + 1):
+        row = [] 
+        for j in range(1, N + 1):
+            if j % 2 == 0:
+                row.append("0")
+            else:
+                value = i * 100 + j * 10
+                row.append(str(value))
+        print(" ".join(row))
 else:
-    print("N має бути в діапазоні від 2 до 99.")
+    print("Значення N повинно бути в діапазоні 2 <= N < 99")
